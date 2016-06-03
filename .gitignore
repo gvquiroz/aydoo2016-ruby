@@ -1,0 +1,6 @@
+# Temporales #
+tmp
+# Package Files #
+*.settings
+*.idea
+

@@ -1,7 +1,7 @@
-Ruby Rake Project 
+aydoo 2016
 =================
 
-aydoo 2016 Profesor: Nico Paez 
+Profesor: Nico Paez 
 -----------------
 
 This project is use:
