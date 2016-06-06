@@ -1,15 +1,20 @@
 class CalculadoraDePrimos
 
   def calcular(miNumero)
-    listaDeNumerosPrimos = Array.new
-
+    @resultado_del_calculo = Array.new
     for i in 2..miNumero
       while miNumero%i == 0
         miNumero = miNumero/i
-        listaDeNumerosPrimos << i
+        @resultado_del_calculo << i
       end
     end
-    listaDeNumerosPrimos
   end
 
+  def get_resultado_en_orden_ascendente
+    @resultado_del_calculo
+  end
+
+  def get_resultado_en_orden_descendente
+    @resultado_del_calculo.reverse
+  end
 end
