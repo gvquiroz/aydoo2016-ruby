@@ -1,3 +1,0 @@
-class GestorDeEntrada
-
-end

@@ -1,4 +1,4 @@
-class GestorDeSalida
+class GestorDeSalidaSpec
   def initialize(array_de_valores)
     @mis_valores = array_de_valores
   end
