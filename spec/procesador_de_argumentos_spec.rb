@@ -10,6 +10,13 @@ class ProcesadorDeArgumentosSpec
       procesador.procesar_argumentos(array_con_contenido)
       expect(procesador.get_formato).to eq(expected_string)
     end
+    it 'should be quiet when get formato' do
+      array_con_contenido = ["--format=quiett"]
+      expected_string = "quiett"
+      procesador = ProcesadorDeArgumentos.new
+      procesador.procesar_argumentos(array_con_contenido)
+      expect(procesador.get_formato).to eq(expected_string)
+    end
 
     it 'should be pretty when get formato como default' do
       expected_string = "pretty"

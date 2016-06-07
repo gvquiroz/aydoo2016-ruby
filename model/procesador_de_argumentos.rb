@@ -2,7 +2,7 @@ class ProcesadorDeArgumentos
 
   def initialize
     @formato = "pretty"
-    @tipo_de_ordenamiento = "pretty"
+    @tipo_de_ordenamiento = "asc"
     @nombreDeArchivo = nil
     @imprime = false
   end
