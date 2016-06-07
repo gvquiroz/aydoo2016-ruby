@@ -42,5 +42,11 @@ class ProcesadorDeArgumentosSpec
       procesador.procesar_argumentos(array_con_contenido)
       expect(procesador.imprime?).to be true
     end
+    it 'should be asc when get ordenamiento cuando paso por parametro asc' do
+      array_con_contenido = ["--sort:asc"]
+      procesador = ProcesadorDeArgumentos.new
+      procesador.procesar_argumentos(array_con_contenido)
+      expect(procesador.get_tipo_de_ordenamiento).to eq("asc")
+    end
   end
 end
