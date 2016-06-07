@@ -13,6 +13,9 @@ class ProcesadorDeArgumentos
           @formato = argumentos.partition('=').last
         elsif argumentos.include? "--output-file="
           @nombreDeArchivo = argumentos.partition('=').last
+          @imprime = true
+        elsif argumentos.include? "--sort:"
+          @tipo_de_ordenamiento = argumentos.partition('=').last
         end
       end
     end
@@ -23,5 +26,9 @@ class ProcesadorDeArgumentos
   end
   def get_nombre_de_archivo
     @nombreDeArchivo
+  end
+
+  def imprime?
+    @imprime
   end
 end

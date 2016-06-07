@@ -30,11 +30,17 @@ class ProcesadorDeArgumentosSpec
       procesador.procesar_argumentos(array_con_contenido)
       expect(procesador.get_nombre_de_archivo).to eq(nil)
     end
-    it 'should be gabi when get nombre de archivo' do
+    it 'should be gabi when get nombre de archivo cuando output file es gabi' do
       array_con_contenido = ["--output-file=gabi"]
       procesador = ProcesadorDeArgumentos.new
       procesador.procesar_argumentos(array_con_contenido)
       expect(procesador.get_nombre_de_archivo).to eq("gabi")
+    end
+    it 'should be true when imprime? al pasar un outputfile valido' do
+      array_con_contenido = ["--output-file=gabi"]
+      procesador = ProcesadorDeArgumentos.new
+      procesador.procesar_argumentos(array_con_contenido)
+      expect(procesador.imprime?).to be true
     end
   end
 end
