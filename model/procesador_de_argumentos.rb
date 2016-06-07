@@ -11,6 +11,8 @@ class ProcesadorDeArgumentos
       args.each do |argumentos|
         if argumentos.include? "--format="
           @formato = argumentos.partition('=').last
+        elsif argumentos.include? "--output-file="
+          @nombreDeArchivo = argumentos.partition('=').last
         end
       end
     end
@@ -18,5 +20,8 @@ class ProcesadorDeArgumentos
 
   def get_formato
     @formato
+  end
+  def get_nombre_de_archivo
+    @nombreDeArchivo
   end
 end
