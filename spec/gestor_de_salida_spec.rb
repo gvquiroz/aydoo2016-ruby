@@ -9,5 +9,10 @@ class GestorDeSalidaSpec
 
       expect { gestor_de_salida.imprimir_por_pantalla }.to output("mi contenido de prueba\n").to_stdout
     end
+
+    it 'should persistir en archivo when persistir en archivo' do
+
+    end
+
   end
 end
