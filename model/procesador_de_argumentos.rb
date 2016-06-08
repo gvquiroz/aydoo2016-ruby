@@ -8,6 +8,11 @@ class ProcesadorDeArgumentos
     @numero
   end
   def procesar_argumentos(args)
+
+    if(args.length > 3)
+      raise ArgumentError.new('El numero de argumentos es erroneo')
+    end
+
     if args.length > 0 then
       args.each do |argumentos|
         if argumentos.include? "--format="
@@ -18,6 +23,9 @@ class ProcesadorDeArgumentos
           @tipo_de_ordenamiento = argumentos.partition(':').last
         else
           @numero = argumentos.chomp.to_i
+          if @numero < 0
+            raise ArgumentError.new('El numero ingresado debe ser positivo')
+          end
         end
       end
     end
