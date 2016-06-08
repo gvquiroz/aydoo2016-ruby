@@ -5,6 +5,7 @@ class ProcesadorDeArgumentos
     @tipo_de_ordenamiento = "asc"
     @nombreDeArchivo = nil
     @imprime = false
+    @numero
   end
   def procesar_argumentos(args)
     if args.length > 0 then
@@ -15,6 +16,8 @@ class ProcesadorDeArgumentos
           @nombreDeArchivo = argumentos.partition('=').last
         elsif argumentos.include? "--sort:"
           @tipo_de_ordenamiento = argumentos.partition(':').last
+        else
+          @numero = argumentos.chomp.to_i
         end
       end
     end
@@ -32,4 +35,9 @@ class ProcesadorDeArgumentos
   def imprime?
     !@nombreDeArchivo.nil?
   end
+
+  def get_numero
+    @numero
+  end
+
 end

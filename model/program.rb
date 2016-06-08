@@ -12,7 +12,7 @@ require_relative 'calculadora_de_primos'
   }
 
   procesador.procesar_argumentos(ARGV)
-  numero = ARGV[0].chomp.to_i
+  numero = procesador.get_numero
   formato_por_parametro = procesador.get_formato
   orden_por_parametro = procesador.get_tipo_de_ordenamiento
 
