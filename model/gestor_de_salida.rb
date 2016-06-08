@@ -7,7 +7,9 @@ class GestorDeSalida
     print "#{@valorAImprimir}\n"
   end
 
-  def persistir_en_archivo
-
+  def persistir_en_archivo(nombre_de_archivo)
+    File.open(nombre_de_archivo, 'w') do |f|
+      f.puts @valorAImprimir
+    end
   end
 end

@@ -28,7 +28,7 @@ require_relative 'calculadora_de_primos'
   gestor_de_salida = GestorDeSalida.new(resultado_formateado)
 
   if procesador.imprime?
-    gestor_de_salida.persistir_en_archivo
+    gestor_de_salida.persistir_en_archivo(procesador.get_nombre_de_archivo)
   else
     gestor_de_salida.imprimir_por_pantalla
   end
