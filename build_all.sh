@@ -3,6 +3,6 @@ set -e
 for dir in */ ; do
    cd $dir
    bundle install
-   bundle exec rake -t
+   bundle exec rake
    cd ..
 done
