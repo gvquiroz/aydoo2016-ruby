@@ -55,5 +55,18 @@ class ProcesadorDeArgumentosSpec
       procesador.procesar_argumentos(array_con_contenido)
       expect(procesador.get_tipo_de_ordenamiento).to eq("asc")
     end
+    it 'should be 25 when procesador get numero' do
+      array_con_contenido = ["25"]
+      procesador = ProcesadorDeArgumentos.new
+      procesador.procesar_argumentos(array_con_contenido)
+      expect(procesador.get_numero).to eq(25)
+    end
+    it 'should raise error when number is negative' do
+      array_con_contenido = ["-25"]
+      procesador = ProcesadorDeArgumentos.new
+      expect{procesador.procesar_argumentos(array_con_contenido)}.to raise_error(ArgumentError)
+    end
+
+
   end
 end

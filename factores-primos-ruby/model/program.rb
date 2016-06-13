@@ -11,19 +11,18 @@ formatos = {'pretty' => FormateadorPretty.new,
             'quiett' => FormateadorQuiett.new
 }
 
-procesador.procesar_argumentos(ARGV)
+conseguirResultadoEnOrden = {'asc' => calculadora.get_resultado_en_orden_ascendente,
+                             'des' => calculadora.get_resultado_en_orden_descendente
+}
 
+procesador.procesar_argumentos(ARGV)
 numero = procesador.get_numero
 formato_por_parametro = procesador.get_formato
 orden_por_parametro = procesador.get_tipo_de_ordenamiento
 
 calculadora.calcular(numero)
 
-calcularEnOrden = {'asc' => calculadora.get_resultado_en_orden_ascendente,
-                   'des' => calculadora.get_resultado_en_orden_descendente
-}
-
-resultado = calcularEnOrden[orden_por_parametro]
+resultado =conseguirResultadoEnOrden[orden_por_parametro]
 resultado_formateado = formatos[formato_por_parametro].get_contenido_formateado(resultado)
 
 gestor_de_salida = GestorDeSalida.new(resultado_formateado)

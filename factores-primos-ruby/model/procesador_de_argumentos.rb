@@ -13,6 +13,8 @@ class ProcesadorDeArgumentos
       raise ArgumentError.new('El numero de argumentos es erroneo')
     end
 
+    #En busqueda de una solucion mas elegante
+
     if args.length > 0 then
       args.each do |argumentos|
         if argumentos.include? "--format="
